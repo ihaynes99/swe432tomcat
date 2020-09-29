@@ -33,7 +33,7 @@ public class HelloServlet extends HttpServlet
         out.println ("<BODY>");
         out.println ("<CENTER>");
 
-        out.println (" <B>Hello! How are you?</B><BR> <!--  English -->");
+        out.println (" <B>Hello! This is Scott Haynes. How are you?</B><BR> <!--  English -->");
         out.println (" <B>Alo!</B><BR> <!--  Portuguese -->");
         out.println (" <B>Anyong haseyo!</B><BR> <!--  Korean -->");
         out.println (" <B>Apa Kabar!</B><BR> <!--  Indonesian -->");
