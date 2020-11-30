@@ -36,7 +36,7 @@ public class HelloServletForward extends HttpServlet
    {
 	   
 	   PrintWriter out = response.getWriter();
-	    Object attributeValue = request.getAttribute("FirstVarNm");
+	    Object attributeValue = request.getParameter("FirstVarNm");
        out.println ("<HTML>");
        out.println ("<BODY>");
       // out.println("<p>hehehe test</p>");
