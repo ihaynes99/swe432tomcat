@@ -40,7 +40,7 @@ public class HelloServlet extends HttpServlet
         HttpSession session = req.getSession(false);
         res.setContentType ("text/html");
         PrintWriter out = res.getWriter ();
-
+/*
         out.println ("<HTML>");
         out.println ("<HEAD>");
         out.println ("<TITLE>SWE 432 HW 8</TITLE>");
@@ -78,12 +78,17 @@ public class HelloServlet extends HttpServlet
 
         out.println ("</BODY>");
 
-        out.println ("</HTML>");
+        out.println ("</HTML>");*/
 
 
+      
 
         out.flush();
         out.close ();
+		
+		request.setAttribute("Request-Attribute", "Value of Attribute ");
+        RequestDispatcher rd = request.getRequestDispatcher("/servlet2");
+        rd.forward(request, response);
 
     }
      @Override

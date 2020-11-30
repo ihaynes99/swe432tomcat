@@ -34,11 +34,25 @@ public class HelloServletForward extends HttpServlet
    protected void doGet  (HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException
    {
+	   
+	   PrintWriter out = response.getWriter();
+	    Object attributeValue = request.getAttribute("Request-Attribute");
+       out.println ("<HTML>");
+       out.println ("<BODY>");
+      // out.println("<p>hehehe test</p>");
+       out.println("<LABEL for = echo>Echo: "+attributeValue+" "+attributeValue+" "+attributeValue+"");
+
+       out.println ("</BODY>");
+       out.println ("</HTML>");
+       out.flush();
+       out.close();
+	   
+	   
      //  String firstVar = "";
       // String operation = "";
       // String secondVar = "";
 
-       firstVar = (String) request.getSession().getAttribute("FirstVarNm");
+       /*firstVar = (String) request.getSession().getAttribute("FirstVarNm");
        operation = (String) request.getSession().getAttribute("operators");
        secondVar = (String) request.getSession().getAttribute("SecondVarNm");
 
@@ -72,18 +86,9 @@ public class HelloServletForward extends HttpServlet
                xor = true;
                break;
 
-       }
+       }*/
 
-       PrintWriter out = response.getWriter();
-       out.println ("<HTML>");
-       out.println ("<BODY>");
-      // out.println("<p>hehehe test</p>");
-       out.println("<LABEL for = echo>Echo: "+firstVar+" "+operation+" "+secondVar+"");
-
-       out.println ("</BODY>");
-       out.println ("</HTML>");
-       out.flush();
-       out.close();
+     
 
        //request.getSession().setAttribute("FirstVarNm", session.getAttribute("FirstVarNm"));
 
