@@ -40,7 +40,7 @@ public class HelloServlet extends HttpServlet
         HttpSession session = req.getSession(false);
         res.setContentType ("text/html");
         PrintWriter out = res.getWriter ();
-/*
+
         out.println ("<HTML>");
         out.println ("<HEAD>");
         out.println ("<TITLE>SWE 432 HW 8</TITLE>");
@@ -86,9 +86,9 @@ public class HelloServlet extends HttpServlet
         out.flush();
         out.close ();
 		
-		req.setAttribute("Request-Attribute", "Value of Attribute ");
-        RequestDispatcher rd = req.getRequestDispatcher("/HelloServletForward");
-        rd.forward(req, res);
+		//req.setAttribute("Request-Attribute", "Value of Attribute ");
+      //  RequestDispatcher rd = req.getRequestDispatcher("/HelloServletForward");
+      //  rd.forward(req, res);
 
     }
      @Override
@@ -96,16 +96,17 @@ public class HelloServlet extends HttpServlet
              throws ServletException, IOException
      {
          request.setAttribute("FirstVarNm", "test");
+         request.setAttribute("Request-Attribute", "Value of Attribute ");
 
-
-         request.getSession().setAttribute("operators", "test");
-         request.getSession().setAttribute("SecondVarNm", request.getParameter("SecondVarNm"));
+       //  request.getSession().setAttribute("operators", "test");
+      //   request.getSession().setAttribute("SecondVarNm", request.getParameter("SecondVarNm"));
 
           if (request.getParameter("FirstVarNm") != null && request.getParameter("operators") != null && request.getParameter("SecondVarNm") != null)
           {
-             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/servlet2");
-             dispatcher.forward(request,response);
+             
           }
+		  RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/servlet2");
+          dispatcher.forward(request,response);
 
      }
 }
