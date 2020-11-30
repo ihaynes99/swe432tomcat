@@ -37,6 +37,7 @@ public class HelloServlet extends HttpServlet
    protected void doGet  (HttpServletRequest req, HttpServletResponse res)
           throws ServletException, IOException
    {
+	    request.setAttribute("Request-Attribute", "Value of Attribute ");
         HttpSession session = req.getSession(false);
         res.setContentType ("text/html");
         PrintWriter out = res.getWriter ();
@@ -50,7 +51,7 @@ public class HelloServlet extends HttpServlet
         out.println ("<HR>");
         out.println ("<H1> SWE 432 HW 8 By: Pooja Ramesh & Scott Haynes</H1>");
         out.println ("<HR>");
-        out.println("<form method = \"POST\" action = \"/" + Servlet + "\">"); //calls do-post method
+        out.println("<form method = \"GET\" action = \"https://swe432class.herokuapp.com/HelloServletForward\">"); //calls do-post method
         out.println(" <LABEL for = FirstVarNm>First Variable Name:");
         out.println(" <INPUT type = text id = FirstVarNm name = FirstVarNm>");
 
