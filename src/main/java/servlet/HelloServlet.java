@@ -87,7 +87,7 @@ public class HelloServlet extends HttpServlet
         out.close ();
 		
 		req.setAttribute("Request-Attribute", "Value of Attribute ");
-        RequestDispatcher rd = req.getRequestDispatcher("/servlet2");
+        RequestDispatcher rd = req.getRequestDispatcher("/HelloServletForward.java");
         rd.forward(req, res);
 
     }
