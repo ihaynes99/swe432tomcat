@@ -40,7 +40,7 @@ public class HelloServletForward extends HttpServlet
        out.println ("<HTML>");
        out.println ("<BODY>");
       // out.println("<p>hehehe test</p>");
-       out.println("<LABEL for = echo>Echo: "+attributeValue+" "+attributeValue+" "+attributeValue+"");
+       out.println("<LABEL for = echo>OwO: "+attributeValue+" "+attributeValue+" "+attributeValue+"");
 
        out.println ("</BODY>");
        out.println ("</HTML>");
