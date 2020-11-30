@@ -37,7 +37,7 @@ public class HelloServlet extends HttpServlet
    protected void doGet  (HttpServletRequest req, HttpServletResponse res)
           throws ServletException, IOException
    {
-	    request.setAttribute("Request-Attribute", "Value of Attribute ");
+	    req.setAttribute("Request-Attribute", "Value of Attribute ");
         HttpSession session = req.getSession(false);
         res.setContentType ("text/html");
         PrintWriter out = res.getWriter ();
