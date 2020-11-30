@@ -51,7 +51,7 @@ public class HelloServlet extends HttpServlet
         out.println ("<HR>");
         out.println ("<H1> SWE 432 HW 8 By: Pooja Ramesh & Scott Haynes</H1>");
         out.println ("<HR>");
-        out.println("<form method = \"GET\" action = \"https://swe432class.herokuapp.com/HelloServletForward\">"); //calls do-post method
+        out.println("<form method = \"POST\" action = \"https://swe432class.herokuapp.com/HelloServletForward\">"); //calls do-post method
         out.println(" <LABEL for = FirstVarNm>First Variable Name:");
         out.println(" <INPUT type = text id = FirstVarNm name = FirstVarNm>");
 
@@ -96,18 +96,14 @@ public class HelloServlet extends HttpServlet
      public void doPost (HttpServletRequest request, HttpServletResponse response)
              throws ServletException, IOException
      {
-         request.setAttribute("FirstVarNm", "test");
-         request.setAttribute("Request-Attribute", "Value of Attribute ");
-
-       //  request.getSession().setAttribute("operators", "test");
-      //   request.getSession().setAttribute("SecondVarNm", request.getParameter("SecondVarNm"));
+        
 
           if (request.getParameter("FirstVarNm") != null && request.getParameter("operators") != null && request.getParameter("SecondVarNm") != null)
           {
-             
-          }
-		  RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/servlet2");
+              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/servlet2");
           dispatcher.forward(request,response);
+          }
+		 
 
      }
 }

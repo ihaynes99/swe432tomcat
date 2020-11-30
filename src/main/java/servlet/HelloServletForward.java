@@ -35,12 +35,14 @@ public class HelloServletForward extends HttpServlet
           throws ServletException, IOException
    {
 	   
-	   PrintWriter out = response.getWriter();
-	    Object attributeValue = request.getParameter("FirstVarNm");
+	  /* PrintWriter out = response.getWriter();
+	   Object firstVar = request.getParameter("FirstVarNm");
+	   Object operator = request.getParameter("operators");
+	   Object secondVar = request.getParameter("SecondVarNm");
        out.println ("<HTML>");
        out.println ("<BODY>");
       // out.println("<p>hehehe test</p>");
-       out.println("<LABEL for = echo>OwO: "+attributeValue+" "+attributeValue+" "+attributeValue+"");
+       out.println("<LABEL for = echo>Echo: "+attributeValue+" "+operator+" "+secondVar+"");
 
        out.println ("</BODY>");
        out.println ("</HTML>");
@@ -48,20 +50,11 @@ public class HelloServletForward extends HttpServlet
        out.close();
 	   
 	   
-     //  String firstVar = "";
-      // String operation = "";
-      // String secondVar = "";
-
-       /*firstVar = (String) request.getSession().getAttribute("FirstVarNm");
-       operation = (String) request.getSession().getAttribute("operators");
-       secondVar = (String) request.getSession().getAttribute("SecondVarNm");
 
        boolean or = false;
        boolean and = false;
        boolean not = false;
        boolean xor = false;
-
-
 
 
        switch (operation)
@@ -86,7 +79,7 @@ public class HelloServletForward extends HttpServlet
                xor = true;
                break;
 
-       }*/
+       }
 
      
 
@@ -97,7 +90,7 @@ public class HelloServletForward extends HttpServlet
 
 
 
-       //doPost(req,res);
+       //doPost(req,res);*/
    }
      @Override
      public void doPost (HttpServletRequest request, HttpServletResponse response)
@@ -105,9 +98,9 @@ public class HelloServletForward extends HttpServlet
      {
 
         // doGet(request,response);
-         String efirstVar = (String) request.getAttribute("FirstVarNm");
-         String eoperation = (String) request.getAttribute("operators");
-         String esecondVar = (String) request.getAttribute("SecondVarNm");
+         String efirstVar = (String) request.getParameter("FirstVarNm");
+         String eoperation = (String) request.getParameter("operators");
+         String esecondVar = (String) request.getParameter("SecondVarNm");
 
           boolean or = false;
           boolean and = false;
@@ -116,7 +109,7 @@ public class HelloServletForward extends HttpServlet
 
 
 
-         /* switch (operation)
+          switch (operation)
           {
               case "~":
               case "not":
@@ -138,7 +131,7 @@ public class HelloServletForward extends HttpServlet
                   xor = true;
                   break;
 
-          }*/
+          }
 
          PrintWriter out = response.getWriter ();
          out.println ("<HTML>");
@@ -149,8 +142,8 @@ public class HelloServletForward extends HttpServlet
          out.println("<table>");
          out.println("<tr>");
          out.println("<td>row:");
-         out.println("<td> "+firstVar+"");
-         out.println("<td> "+secondVar+"");
+         out.println("<td> "+efirstVar+"");
+         out.println("<td> "+esecondVar+"");
          out.println("<td> result");
          out.println("</tr>");
          if (and)
