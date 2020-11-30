@@ -25,9 +25,7 @@ import javax.servlet.http.HttpSession;
 
 public class HelloServletForward extends HttpServlet
 {
-     public static String firstVar = "";
-     public static String operation = "";
-     public static String secondVar = "";
+ 
      //static final String ValSep = ";";
 
   @Override
@@ -35,72 +33,16 @@ public class HelloServletForward extends HttpServlet
           throws ServletException, IOException
    {
 	   
-	  /* PrintWriter out = response.getWriter();
-	   Object firstVar = request.getParameter("FirstVarNm");
-	   Object operator = request.getParameter("operators");
-	   Object secondVar = request.getParameter("SecondVarNm");
-       out.println ("<HTML>");
-       out.println ("<BODY>");
-      // out.println("<p>hehehe test</p>");
-       out.println("<LABEL for = echo>Echo: "+attributeValue+" "+operator+" "+secondVar+"");
-
-       out.println ("</BODY>");
-       out.println ("</HTML>");
-       out.flush();
-       out.close();
-	   
-	   
-
-       boolean or = false;
-       boolean and = false;
-       boolean not = false;
-       boolean xor = false;
-
-
-       switch (operation)
-       {
-           case "~":
-           case "not":
-               operation = "~";
-               not = true;
-               break;
-           case "||":
-           case "or":
-               operation = "||";
-               or = true;
-               break;
-           case "&&":
-           case "and":
-               operation = "&&";
-               and = true;
-               break;
-           case "xor":
-               operation = "xor";
-               xor = true;
-               break;
-
-       }
-
-     
-
-       //request.getSession().setAttribute("FirstVarNm", session.getAttribute("FirstVarNm"));
-
-       //session.setAttribute("operators", operation);
-       //session.setAttribute("SecondVarNm", session.getAttribute("SecondVarNm"));
-
-
-
-       //doPost(req,res);*/
+	 
    }
      @Override
      public void doPost (HttpServletRequest request, HttpServletResponse response)
              throws ServletException, IOException
      {
 
-        // doGet(request,response);
-         String efirstVar = (String) request.getParameter("FirstVarNm");
-         String eoperation = (String) request.getParameter("operators");
-         String esecondVar = (String) request.getParameter("SecondVarNm");
+         String firstVar = (String) request.getParameter("FirstVarNm");
+         String operation = (String) request.getParameter("operators");
+         String secondVar = (String) request.getParameter("SecondVarNm");
 
           boolean or = false;
           boolean and = false;
@@ -136,14 +78,13 @@ public class HelloServletForward extends HttpServlet
          PrintWriter out = response.getWriter ();
          out.println ("<HTML>");
          out.println ("<BODY>");
-         out.println("<p>hehehe test</p>");
-         out.println("<LABEL for = echo>Echo: "+efirstVar+" "+eoperation+" "+esecondVar+"");
+         out.println("<LABEL for = echo>Echo: "+firstVar+" "+operation+" "+secondVar+"");
 
          out.println("<table>");
          out.println("<tr>");
          out.println("<td>row:");
-         out.println("<td> "+efirstVar+"");
-         out.println("<td> "+esecondVar+"");
+         out.println("<td> "+firstVar+"");
+         out.println("<td> "+secondVar+"");
          out.println("<td> result");
          out.println("</tr>");
          if (and)
