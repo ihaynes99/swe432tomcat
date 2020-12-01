@@ -50,8 +50,9 @@ public class HelloServlet extends HttpServlet
         out.println ("<BODY>");
         out.println ("<HR>");
         out.println ("<H1> SWE 432 HW 8 By: Pooja Ramesh & Scott Haynes</H1>");
-		 out.println ("<H1> Collaboration Summary: Scott wrote the second servlet to POST the results from the GET request that Pooja wrote in the first servlet and she forwarded the servlet to the second servlet</H1>");
         out.println ("<HR>");
+		out.println ("<p> Collaboration Summary: Scott wrote the second servlet to POST the results from the GET request that Pooja wrote in the first servlet and she forwarded the servlet to the second servlet</p>");
+
         out.println("<form method = \"POST\" action = \"https://swe432class.herokuapp.com/HelloServletForward\">"); //calls do-post method
         out.println(" <LABEL for = FirstVarNm>First Variable Name:");
         out.println(" <INPUT type = text id = FirstVarNm name = FirstVarNm>");
